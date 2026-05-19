@@ -61,8 +61,11 @@ These workflows prove:
 - Inventory can safely move through warehouses.
 - Inventory can safely leave through sales.
 - Return, warranty, defect, repair, and disposal flows are covered.
+- Internal trade can move stock and accounting across two ERPNext companies.
 - Purchase Invoice locks protect Purchase Receipt cancellation.
 - Sales Invoice locks protect Delivery Note cancellation.
+- Linked inter-company Purchase Invoice records protect Sales Invoice cancellation.
+- Valid inter-company reversal works when the receiving Purchase Invoice is cancelled before the source Sales Invoice.
 - Non-stock fee and rebate invoices do not create Stock Ledger Entry rows.
 - Public webhook responses are allowlisted and checked for credential leaks.
 
@@ -93,6 +96,7 @@ The active ecosystem has been tested against ERPNext/Frappe v16 behavior on a se
 | Retail | Sale, exchange, return fee, warranty, defect, repair, disposal |
 | FMCG/Fresh | Batch expiry, spoilage, damage, vendor claim warehouse, non-stock rebate/fee |
 | Manufacturing basics | BOM, Work Order, WIP transfer, Manufacture Entry, Finished Goods sale |
+| Multi-company | Internal Customer/Supplier mapping, allowed-company setup, internal sale/purchase, linked cancellation lock, valid reversal order |
 | Negative cases | Over-issue, wrong warehouse, disabled item, missing warehouse, duplicate Batch/Serial |
 | Security | Allowlisted webhook summaries, no API keys or secrets in responses |
 
@@ -169,8 +173,9 @@ ERPNext n8n integration, Frappe n8n nodes, n8n community nodes ERPNext, ERPNext 
 
 Planned direction:
 
-- Continue hardening module READMEs with production examples.
-- Add more focused workflow documentation for retail, manufacturing basics, FMCG/Fresh, and coverage matrices.
+- Keep module READMEs concise and production-focused.
+- Add focused workflow documentation for retail, manufacturing basics, FMCG/Fresh, multi-company, and coverage matrices.
+- Build Core V2 as the Custom DocType, custom field, metadata, and schema translation helper layer for real ERPNext/Frappe customization pain points.
 - Add additional modules only when they can follow the same live-tested standard.
 - Expand automated tests for request construction, endpoint selection, and credential redaction.
 - Keep the ecosystem modular so teams can install only the ERPNext domain they need.
