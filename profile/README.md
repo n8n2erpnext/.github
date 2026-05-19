@@ -177,7 +177,9 @@ Planned direction:
 
 - Keep module READMEs concise and production-focused.
 - Add focused workflow documentation for retail, manufacturing basics, FMCG/Fresh, multi-company, and coverage matrices.
-- Build Core V2 as the Custom DocType, custom field, metadata, and schema translation helper layer for real ERPNext/Frappe customization pain points.
+- Keep V1 focused on maintenance, issue response, documentation fixes, and dependency/security updates.
+- Build Core V2 only when enough real issues and custom ERPNext examples arrive.
+- Position Core V2 as a Frappe/ERPNext Customization Bridge: Custom DocTypes, custom fields, dynamic metadata, child tables, method helpers, and schema translation for real ERPNext/Frappe customization pain points.
 - Add additional modules only when they can follow the same live-tested standard.
 - Expand automated tests for request construction, endpoint selection, and credential redaction.
 - Keep the ecosystem modular so teams can install only the ERPNext domain they need.

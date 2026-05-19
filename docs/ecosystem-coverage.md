@@ -269,13 +269,32 @@ Operational conclusion:
 
 ## Core V2 Direction
 
-Core should not become a rushed checklist module. The practical V2 direction is to solve ERPNext/Frappe customization pain points:
+Core should not become a rushed checklist module. The practical V2 direction is to solve ERPNext/Frappe customization pain points.
+
+V1 closure:
+
+- HRMS, Accounting, Buying, Selling, and Stock are considered closed for broad speculative feature expansion.
+- Future V1 work should be maintenance, issue response, documentation fixes, and security/dependency updates.
+- New features should be driven by real GitHub issues, real custom ERPNext examples, or repeated integration pain points.
+
+Core V2 positioning:
+
+- Frappe/ERPNext Customization Bridge.
+- Custom DocType Adapter.
+- Schema translation layer for ERPNext/Frappe custom reality.
+
+Core V2 should focus on:
 
 - Custom DocTypes.
 - Custom fields.
 - Dynamic metadata discovery.
 - Schema translation.
 - Converting custom ERPNext documents into shapes that domain nodes can understand.
+- Child table helpers.
+- Safer custom method execution patterns.
+- Submit/cancel/amend helpers shared across packages.
+- Schema snapshots for workflow debugging.
 
 Domain nodes should stay focused on stable business surfaces. Core should become the advanced customization bridge so the ecosystem does not duplicate custom-doc translation logic across every package.
 
+Do not build Core V2 as a generic HTTP wrapper. Its value is understanding and translating custom ERPNext/Frappe schema safely.
