@@ -69,6 +69,8 @@ These workflows prove:
 - Non-stock fee and rebate invoices do not create Stock Ledger Entry rows.
 - Public webhook responses are allowlisted and checked for credential leaks.
 
+Detailed coverage notes, tested ERPNext pain points, and live document references are maintained in [`docs/ecosystem-coverage.md`](../docs/ecosystem-coverage.md).
+
 ## Module Packages
 
 | Module | Package | npm | Scope | Status |
