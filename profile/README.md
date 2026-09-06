@@ -5,22 +5,67 @@
 <h1 align="center">n8n2erpnext</h1>
 
 <p align="center">
-  Production-minded n8n community nodes for ERPNext and Frappe automation.
+  Open-source engineering for ERPNext/Frappe operations, Vietnam localization, evidence-governed BI, and self-hosted automation.
   <br>
-  Built as a connected ERP ecosystem, not isolated node packages.
+  Built from real operational workflows, with explicit boundaries, auditable evidence, and production-minded deployment patterns.
 </p>
 
 <p align="center">
+  <a href="https://github.com/n8n2erpnext/lightbi"><img alt="LightBI" src="https://img.shields.io/badge/LightBI-public%20beta-2563EB"></a>
+  <a href="https://github.com/n8n2erpnext/erpnext-vietnam"><img alt="ERPNext Vietnam" src="https://img.shields.io/badge/ERPNext%20Vietnam-0.1.0--rc1-2E7D5F"></a>
+  <a href="https://github.com/n8n2erpnext/erpnext2vi"><img alt="Vietnamese localization" src="https://img.shields.io/badge/Frappe%20%2F%20ERPNext-Vietnamese%20localization-C62828"></a>
   <a href="https://www.npmjs.com/search?q=n8n-nodes-erpnext"><img alt="npm n8n ERPNext nodes" src="https://img.shields.io/badge/npm-n8n--nodes--erpnext-2490EF"></a>
-  <img alt="ERPNext v15 v16" src="https://img.shields.io/badge/ERPNext-v15%20%2F%20v16-171717">
-  <img alt="Frappe v15 v16" src="https://img.shields.io/badge/Frappe-v15%20%2F%20v16-171717">
-  <img alt="n8n community nodes" src="https://img.shields.io/badge/n8n-community%20nodes-FF6D5A">
-  <img alt="live tested" src="https://img.shields.io/badge/live--tested-E2E%20business%20workflows-2E7D5F">
+  <img alt="ERPNext and Frappe" src="https://img.shields.io/badge/ERPNext%20%2F%20Frappe-self--hosted-171717">
 </p>
+
+## What Lives Here
+
+`n8n2erpnext` has grown beyond its original n8n node packages. The organization now hosts a small open-source stack around ERPNext/Frappe operations, Vietnamese localization, business analysis, edge integration, and zero-trust infrastructure.
+
+### Flagship and Vietnam-focused projects
+
+| Project | Purpose | Current posture |
+| --- | --- | --- |
+| [**LightBI**](https://github.com/n8n2erpnext/lightbi) | Evidence-governed business analysis for spreadsheets, online sheets, and databases, with local-first execution and explicit source/evidence boundaries. | Public beta |
+| [**ERPNext Vietnam**](https://github.com/n8n2erpnext/erpnext-vietnam) | Vietnam localization and compliance layer for Frappe/ERPNext v16: TT99 accounting references, VAT, PIT, BHXH/BHYT/BHTN, statutory reporting, and provider-neutral e-invoice workflows. | `0.1.0-rc1` engineering RC |
+| [**ERPNext / Frappe Vietnamese Localization**](https://github.com/n8n2erpnext/erpnext2vi) | Semantic Vietnamese translation catalogs for Frappe, ERPNext, HRMS, CRM, Insights, and additional business-domain apps. | Semantic v3 QA |
+
+### Infrastructure and edge projects
+
+| Project | Purpose |
+| --- | --- |
+| [**Zero Trust Syncd**](https://github.com/n8n2erpnext/erpnext-netbird-bridge) | Governed ERPNext identity-to-NetBird synchronization with preview, reconciliation, drift detection, audit history, and an operator console. |
+| [**Edge Attendance Gateway**](https://github.com/n8n2erpnext/edge-attendance-gateway) | Offline-first attendance capture at the branch/site edge with cryptographic request verification, durable local queueing, and ERPNext synchronization. |
+
+### ERPNext automation packages for n8n
+
+The original project family remains active as modular community nodes rather than a single monolithic connector:
+
+| Repository | Scope |
+| --- | --- |
+| [n8n-nodes-frappe-core](https://github.com/n8n2erpnext/n8n-nodes-frappe-core) | Shared Frappe API foundation and generic integration behavior |
+| [n8n-nodes-erpnext-accounting](https://github.com/n8n2erpnext/n8n-nodes-erpnext-accounting) | Accounting documents and ledger-facing workflows |
+| [n8n-nodes-erpnext-buying](https://github.com/n8n2erpnext/n8n-nodes-erpnext-buying) | Supplier and procurement workflows |
+| [n8n-nodes-erpnext-selling](https://github.com/n8n2erpnext/n8n-nodes-erpnext-selling) | Customer and sales workflows |
+| [n8n-nodes-erpnext-stock](https://github.com/n8n2erpnext/n8n-nodes-erpnext-stock) | Warehouse, inventory, batch, serial, and stock-ledger workflows |
+| [n8n-nodes-erpnext-hrms](https://github.com/n8n2erpnext/n8n-nodes-erpnext-hrms) | Employee, attendance, leave, and HRMS workflows |
+| [n8n-nodes-erpnext-crm](https://github.com/n8n2erpnext/n8n-nodes-erpnext-crm) | Public CRM package scaffold; not presented as a released module |
+
+## Engineering Principles
+
+The repositories are different products, but they share the same engineering posture:
+
+- **Preserve upstream boundaries.** Prefer Frappe/ERPNext extension points, companion apps, adapters, and explicit contracts over unnecessary core forks.
+- **Fail closed when evidence is weak.** LightBI does not speculate joins or silently substitute measures when source identity, grain, or analytical authorization is uncertain.
+- **Version rules that change over time.** ERPNext Vietnam keeps legal rules effective-dated and auditable, with preview/apply separation and certification gates for external transports.
+- **Make risky infrastructure changes reviewable.** Zero Trust Syncd defaults to preview/dry-run patterns, explicit guardrails, drift detection, snapshots, and documented failure behavior.
+- **Keep the edge resilient.** Edge Attendance Gateway validates requests locally, queues durably when upstream ERPNext is unavailable, and synchronizes only across an explicit trust boundary.
+- **Treat localization as domain work.** `erpnext2vi` translates for business meaning and runtime context across ERP, HRMS, CRM, Healthcare, Hospitality, and other Frappe applications instead of word-for-word substitution.
+- **Self-host where it improves control.** Local-first execution, operator diagnostics, upgradeability, privacy boundaries, and recoverability are treated as product features rather than deployment afterthoughts.
 
 ## ERPNext Automation For n8n
 
-`n8n2erpnext` is an open-source ecosystem of n8n community nodes for ERPNext and Frappe. It helps teams automate real ERP operations such as accounting, procurement, sales, warehouse movement, inventory validation, and cross-module document integrity.
+The n8n package family is the organization's original ERP automation layer. It provides open-source community nodes for ERPNext and Frappe and helps teams automate real operations such as accounting, procurement, sales, warehouse movement, inventory validation, and cross-module document integrity.
 
 The project is designed for:
 
@@ -102,7 +147,7 @@ The active ecosystem has been tested against ERPNext/Frappe v16 behavior on a se
 | Negative cases | Over-issue, wrong warehouse, disabled item, missing warehouse, duplicate Batch/Serial |
 | Security | Allowlisted webhook summaries, no API keys or secrets in responses |
 
-## Why This Project Exists
+## Why The n8n Node Family Exists
 
 Many ERPNext integrations stop at generic HTTP requests. `n8n2erpnext` goes further by packaging repeatable, module-aware n8n nodes with:
 
@@ -171,7 +216,7 @@ The project favors operational safety over broad, unchecked API exposure:
 
 ERPNext n8n integration, Frappe n8n nodes, n8n community nodes ERPNext, ERPNext automation, Frappe automation, ERPNext Accounting n8n, ERPNext Buying n8n, ERPNext Selling n8n, ERPNext Stock n8n, ERPNext HRMS n8n, ERPNext API v2 n8n, Frappe REST API n8n, ERPNext workflow automation, n8n ERP integration, self-hosted ERPNext automation, warehouse automation ERPNext, stock ledger ERPNext n8n, purchase receipt ERPNext n8n, sales invoice ERPNext n8n, business lifecycle ERPNext automation.
 
-## Roadmap
+## n8n Node Family Roadmap
 
 Planned direction:
 
