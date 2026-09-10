@@ -5,13 +5,14 @@
 <h1 align="center">n8n2erpnext</h1>
 
 <p align="center">
-  Open-source engineering for ERPNext/Frappe operations, Vietnam localization, evidence-governed BI, and self-hosted automation.
+  Open-source engineering for ERPNext/Frappe operations, Vietnam localization, evidence-governed BI, secure AI-to-machine connectivity, and self-hosted automation.
   <br>
   Built from real operational workflows, with explicit boundaries, auditable evidence, and production-minded deployment patterns.
 </p>
 
 <p align="center">
   <a href="https://github.com/n8n2erpnext/lightbi"><img alt="LightBI" src="https://img.shields.io/badge/LightBI-public%20beta-2563EB"></a>
+  <a href="https://github.com/n8n2erpnext/light-remote-mcp"><img alt="Light Remote MCP" src="https://img.shields.io/badge/Light%20Remote%20MCP-v0.9%20candidate-7C3AED"></a>
   <a href="https://github.com/n8n2erpnext/erpnext-vietnam"><img alt="ERPNext Vietnam" src="https://img.shields.io/badge/ERPNext%20Vietnam-0.1.0--rc1-2E7D5F"></a>
   <a href="https://github.com/n8n2erpnext/erpnext2vi"><img alt="Vietnamese localization" src="https://img.shields.io/badge/Frappe%20%2F%20ERPNext-Vietnamese%20localization-C62828"></a>
   <a href="https://www.npmjs.com/search?q=n8n-nodes-erpnext"><img alt="npm n8n ERPNext nodes" src="https://img.shields.io/badge/npm-n8n--nodes--erpnext-2490EF"></a>
@@ -20,7 +21,7 @@
 
 ## What Lives Here
 
-`n8n2erpnext` has grown beyond its original n8n node packages. The organization now hosts a small open-source stack around ERPNext/Frappe operations, Vietnamese localization, business analysis, edge integration, and zero-trust infrastructure.
+`n8n2erpnext` has grown beyond its original n8n node packages. The organization now hosts a small open-source stack around ERPNext/Frappe operations, Vietnamese localization, business analysis, AI-to-machine connectivity, edge integration, and zero-trust infrastructure.
 
 ### Flagship and Vietnam-focused projects
 
@@ -34,6 +35,7 @@
 
 | Project | Purpose |
 | --- | --- |
+| [**Light Remote MCP**](https://github.com/n8n2erpnext/light-remote-mcp) | Outbound-only, explicitly authorized remote execution bridge for ChatGPT, Claude, Codex, and MCP-capable workflows, with persistent Windows/Linux clients, signed device identity, audited routing, and signed updates. |
 | [**Zero Trust Syncd**](https://github.com/n8n2erpnext/erpnext-netbird-bridge) | Governed ERPNext identity-to-NetBird synchronization with preview, reconciliation, drift detection, audit history, and an operator console. |
 | [**Edge Attendance Gateway**](https://github.com/n8n2erpnext/edge-attendance-gateway) | Offline-first attendance capture at the branch/site edge with cryptographic request verification, durable local queueing, and ERPNext synchronization. |
 
@@ -58,6 +60,7 @@ The repositories are different products, but they share the same engineering pos
 - **Preserve upstream boundaries.** Prefer Frappe/ERPNext extension points, companion apps, adapters, and explicit contracts over unnecessary core forks.
 - **Fail closed when evidence is weak.** LightBI does not speculate joins or silently substitute measures when source identity, grain, or analytical authorization is uncertain.
 - **Version rules that change over time.** ERPNext Vietnam keeps legal rules effective-dated and auditable, with preview/apply separation and certification gates for external transports.
+- **Govern remote execution at the device boundary.** Light Remote MCP uses explicit node targeting, signed outbound device channels, local capability re-inference, and no silent fallback to another machine.
 - **Make risky infrastructure changes reviewable.** Zero Trust Syncd defaults to preview/dry-run patterns, explicit guardrails, drift detection, snapshots, and documented failure behavior.
 - **Keep the edge resilient.** Edge Attendance Gateway validates requests locally, queues durably when upstream ERPNext is unavailable, and synchronizes only across an explicit trust boundary.
 - **Treat localization as domain work.** `erpnext2vi` translates for business meaning and runtime context across ERP, HRMS, CRM, Healthcare, Hospitality, and other Frappe applications instead of word-for-word substitution.
